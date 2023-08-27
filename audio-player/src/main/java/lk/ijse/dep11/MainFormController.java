@@ -80,7 +80,12 @@ public class MainFormController {
         }
     }
 
-    
+    public void imgStopOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.stop();
+            imgPlay.toFront();
+        }
+    }
 
 
 
