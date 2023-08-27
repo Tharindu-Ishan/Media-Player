@@ -46,7 +46,7 @@ public class MainFormController {
     @FXML
     private TextField txtOpen;
     MediaPlayer mediaPlayer;
-    
+
     public void initialize(){
 
     }
@@ -67,6 +67,14 @@ public class MainFormController {
         }
 
     }
+    public void imgPlayOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.play();
+            imgPause.toFront();
+        }
+    }
+
+    
 
 
 }
