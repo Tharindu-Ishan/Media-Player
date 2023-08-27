@@ -50,10 +50,89 @@ public class MainFormController {
     MediaPlayer mediaPlayer;
 
     public void initialize(){
+        imgRepeat.setOnMouseEntered(mouseEvent1 -> {
+            imgRepeat.setScaleX(1.1);
+            imgRepeat.setScaleY(1.1);
+        });
+        imgRepeat.setOnMouseExited(mouseEvent -> {
+            imgRepeat.setScaleX(1);
+            imgRepeat.setScaleY(1);
+        });
+        imgPrev.setOnMouseEntered(mouseEvent1 -> {
+            imgPrev.setScaleX(1.1);
+            imgPrev.setScaleY(1.1);
+        });
+        imgPrev.setOnMouseExited(mouseEvent -> {
+            imgPrev.setScaleX(1);
+            imgPrev.setScaleY(1);
+        });
+        imgPlay.setOnMouseEntered(mouseEvent1 -> {
+            imgPlay.setScaleX(1.1);
+            imgPlay.setScaleY(1.1);
+        });
+        imgPlay.setOnMouseExited(mouseEvent -> {
+            imgPlay.setScaleX(1);
+            imgPlay.setScaleY(1);
+        });
+        imgPause.setOnMouseEntered(mouseEvent1 -> {
+            imgPause.setScaleX(1.1);
+            imgPause.setScaleY(1.1);
+        });
+        imgPause.setOnMouseExited(mouseEvent -> {
+            imgPause.setScaleX(1);
+            imgPause.setScaleY(1);
+        });
+        imgNext.setOnMouseEntered(mouseEvent1 -> {
+            imgNext.setScaleX(1.1);
+            imgNext.setScaleY(1.1);
+        });
+        imgNext.setOnMouseExited(mouseEvent -> {
+            imgNext.setScaleX(1);
+            imgNext.setScaleY(1);
+        });
+        imgStop.setOnMouseEntered(mouseEvent1 -> {
+            imgStop.setScaleX(1.1);
+            imgStop.setScaleY(1.1);
+        });
+        imgStop.setOnMouseExited(mouseEvent -> {
+            imgStop.setScaleX(1);
+            imgStop.setScaleY(1);
+        });
+        imgVolume.setOnMouseEntered(mouseEvent1 -> {
+            imgVolume.setScaleX(1.1);
+            imgVolume.setScaleY(1.1);
+        });
+        imgVolume.setOnMouseExited(mouseEvent -> {
+            imgVolume.setScaleX(1);
+            imgVolume.setScaleY(1);
+        });
+        imgMute.setOnMouseEntered(mouseEvent1 -> {
+            imgMute.setScaleX(1.1);
+            imgMute.setScaleY(1.1);
+        });
+        imgMute.setOnMouseExited(mouseEvent -> {
+            imgMute.setScaleX(1);
+            imgMute.setScaleY(1);
+        });
+        imgOpen.setOnMouseEntered(mouseEvent1 -> {
+            imgOpen.setScaleX(1.1);
+            imgOpen.setScaleY(1.1);
+        });
+        imgOpen.setOnMouseExited(mouseEvent -> {
+            imgOpen.setScaleX(1);
+            imgOpen.setScaleY(1);
+        });
+
 
     }
 
     public void imgOpenOnMouseClicked(MouseEvent mouseEvent) {
+
+
+
+
+
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Mp3 Files","*mp3"));
 //        File audioFile = fileChooser.showOpenDialog(root.getScene().getWindow());
