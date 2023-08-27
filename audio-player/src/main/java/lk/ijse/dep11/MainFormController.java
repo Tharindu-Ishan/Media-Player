@@ -113,7 +113,7 @@ public class MainFormController {
             mediaPlayer.play();
             imgPause.toFront();
             mediaPlayer.currentTimeProperty().addListener((observableValue, duration, t1) -> {
-                lblTime.setText(String.format("Time :%02.0f: %02.0f",duration.toMinutes(),duration.toSeconds()));
+                lblTime.setText(String.format("Time : %02.0f : %02.0f",duration.toMinutes(),duration.toSeconds()));
                 sldTiming.setValue(duration.toSeconds()*100/mediaPlayer.getStopTime().toSeconds());
             });
         }

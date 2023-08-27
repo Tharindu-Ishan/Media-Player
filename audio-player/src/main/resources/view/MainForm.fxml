@@ -10,11 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="304.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.MainFormController">
+<AnchorPane fx:id="root" prefHeight="304.0" prefWidth="551.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.MainFormController">
    <children>
-      <VBox alignment="CENTER" layoutX="50.0" layoutY="16.0" prefHeight="86.0" prefWidth="471.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0497ba" height="199.0" layoutX="-6.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" style="-fx-arc-width: 30; -fx-arc-height: 30;" width="563.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <VBox alignment="CENTER" layoutX="22.0" layoutY="23.0" prefHeight="86.0" prefWidth="471.0" spacing="10.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
             <Label text="Audio Player" textFill="#364672">
                <font>
