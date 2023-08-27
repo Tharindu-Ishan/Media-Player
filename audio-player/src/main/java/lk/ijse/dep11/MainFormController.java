@@ -112,4 +112,18 @@ public class MainFormController {
         }
 
     }
+
+    public void sldVolumeOnMouseDragged(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.setVolume(sldVolume.getValue());
+            System.out.println(sldVolume.getValue());
+        }
+    }
+
+    public void sldVolumeOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.setVolume(sldVolume.getValue());
+        }
+
+    }
 }
