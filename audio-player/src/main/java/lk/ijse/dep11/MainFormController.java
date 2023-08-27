@@ -17,6 +17,7 @@ public class MainFormController {
 
     public AnchorPane root;
     public ImageView imgPause;
+    public ImageView imgMute;
     @FXML
     private ImageView imgNext;
 
@@ -94,5 +95,21 @@ public class MainFormController {
         if(mediaPlayer!=null){
             mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         }
+    }
+
+    public void imgMuteOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.setMute(false);
+            imgVolume.toFront();
+        }
+
+    }
+
+    public void imgVolumeOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.setMute(true);
+            imgMute.toFront();
+        }
+
     }
 }
