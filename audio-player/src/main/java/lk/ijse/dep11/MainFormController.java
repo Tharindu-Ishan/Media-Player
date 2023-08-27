@@ -73,8 +73,16 @@ public class MainFormController {
             imgPause.toFront();
         }
     }
+    public void imgPauseOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.pause();
+            imgPlay.toFront();
+        }
+    }
 
     
+
+
 
 
 }
