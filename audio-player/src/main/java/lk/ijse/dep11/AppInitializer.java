@@ -22,6 +22,5 @@ public class AppInitializer extends Application {
         primaryStage.setTitle("Audio Player");
         primaryStage.centerOnScreen();
         primaryStage.show();
-
     }
 }

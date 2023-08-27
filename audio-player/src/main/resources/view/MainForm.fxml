@@ -1,14 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.dep11.MainFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="root" prefHeight="331.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.MainFormController">
+   <children>
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="53.0" prefHeight="86.0" prefWidth="471.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+         <children>
+            <Label text="Audio Player" textFill="#364672">
+               <font>
+                  <Font name="Dyuthi Regular" size="45.0" />
+               </font>
+               <padding>
+                  <Insets bottom="30.0" />
+               </padding>
+            </Label>
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <TextField fx:id="txtOpen" editable="false" prefHeight="24.0" prefWidth="413.0" />
+                  <ImageView fx:id="imgOpen" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#imgOpenOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Folder-Open-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Slider fx:id="sldTiming" />
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="411.0" spacing="15.0">
+               <children>
+                  <ImageView fx:id="imgRepeat" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Button-Repeat-icon.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="imgPrev" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Button-First-icon.png" />
+                     </image>
+                  </ImageView>
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <ImageView fx:id="imgPause" fitHeight="40.0" fitWidth="40.0" layoutX="90.0" layoutY="65.0" onMouseClicked="#imgPauseOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Button-Pause-icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgPlay" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#imgPlayOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Button-Play-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <ImageView fx:id="imgNext" fitHeight="40.0" fitWidth="40.0" layoutX="68.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Button-Next-icon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgStop" fitHeight="40.0" fitWidth="40.0" layoutX="184.0" layoutY="10.0" onMouseClicked="#imgStopOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Button-Stop-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Slider fx:id="sldVolume" prefHeight="16.0" prefWidth="100.0" />
+                  <ImageView fx:id="imgVolume" fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Sound-on-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
