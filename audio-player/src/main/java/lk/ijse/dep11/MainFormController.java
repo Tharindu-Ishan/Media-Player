@@ -3,14 +3,17 @@ package lk.ijse.dep11;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.util.List;
 
 public class MainFormController {
@@ -47,9 +50,21 @@ public class MainFormController {
 
     @FXML
     private TextField txtOpen;
+
+
+    private int index=0;
+    List<File> files;
+    File audioFile;
     MediaPlayer mediaPlayer;
 
+
+
+
     public void initialize(){
+
+        if(audioFile!=null) {
+
+        }
         imgRepeat.setOnMouseEntered(mouseEvent1 -> {
             imgRepeat.setScaleX(1.1);
             imgRepeat.setScaleY(1.1);
@@ -58,6 +73,8 @@ public class MainFormController {
             imgRepeat.setScaleX(1);
             imgRepeat.setScaleY(1);
         });
+        imgRepeat.setOnMousePressed(event -> imgRepeat.setEffect(new InnerShadow(30, Color.BLACK)));
+
         imgPrev.setOnMouseEntered(mouseEvent1 -> {
             imgPrev.setScaleX(1.1);
             imgPrev.setScaleY(1.1);
@@ -128,33 +145,32 @@ public class MainFormController {
 
     public void imgOpenOnMouseClicked(MouseEvent mouseEvent) {
 
-
-
-
-
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Mp3 Files","*mp3"));
 //        File audioFile = fileChooser.showOpenDialog(root.getScene().getWindow());
-        List<File> files = fileChooser.showOpenMultipleDialog(root.getScene().getWindow());
-        File audioFile = files.get(0);
 
-        if(audioFile!=null){
+
+        files = fileChooser.showOpenMultipleDialog(root.getScene().getWindow());
+        if(files!=null) {
+            audioFile = files.get(index);
             txtOpen.setText(audioFile.getAbsolutePath());
-            Media media = new Media(audioFile.toURI().toString());
-
-            mediaPlayer = new MediaPlayer(media);
         }
         else {
             txtOpen.clear();
         }
 
     }
+
     public void imgPlayOnMouseClicked(MouseEvent mouseEvent) {
-        if(mediaPlayer!=null){
+        if(files!=null) {
+            audioFile = files.get(index);
+            txtOpen.setText(audioFile.getAbsolutePath());
+            Media media = new Media(audioFile.toURI().toString());
+            mediaPlayer = new MediaPlayer(media);
             mediaPlayer.play();
             imgPause.toFront();
         }
+
     }
     public void imgPauseOnMouseClicked(MouseEvent mouseEvent) {
         if(mediaPlayer!=null){
@@ -162,36 +178,29 @@ public class MainFormController {
             imgPlay.toFront();
         }
     }
-
     public void imgStopOnMouseClicked(MouseEvent mouseEvent) {
         if(mediaPlayer!=null){
             mediaPlayer.stop();
             imgPlay.toFront();
         }
     }
-
     public void imgRepeatOnMouseClicked(MouseEvent mouseEvent) {
         if(mediaPlayer!=null){
             mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         }
     }
-
     public void imgMuteOnMouseClicked(MouseEvent mouseEvent) {
         if(mediaPlayer!=null){
             mediaPlayer.setMute(false);
             imgVolume.toFront();
         }
-
     }
-
     public void imgVolumeOnMouseClicked(MouseEvent mouseEvent) {
         if(mediaPlayer!=null){
             mediaPlayer.setMute(true);
             imgMute.toFront();
         }
-
     }
-
     public void sldVolumeOnMouseDragged(MouseEvent mouseEvent) {
         if(mediaPlayer!=null){
             mediaPlayer.setVolume(sldVolume.getValue());
@@ -203,6 +212,19 @@ public class MainFormController {
         if(mediaPlayer!=null){
             mediaPlayer.setVolume(sldVolume.getValue());
         }
+    }
+    public void imgNextOnMouseClicked(MouseEvent mouseEvent) {
 
+        if(files.size()-1>index) index++;
+        else index=0;
+        imgStopOnMouseClicked(mouseEvent);
+        imgPlayOnMouseClicked(mouseEvent);
+    }
+
+    public void imgPrevOnMouseClicked(MouseEvent mouseEvent) {
+        if(index>0) index--;
+        else index=files.size()-1;
+        imgStopOnMouseClicked(mouseEvent);
+        imgPlayOnMouseClicked(mouseEvent);
     }
 }

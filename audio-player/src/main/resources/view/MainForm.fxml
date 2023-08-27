@@ -41,7 +41,7 @@
                      <image>
                         <Image url="@../image/Button-Repeat-icon.png" />
                      </image></ImageView>
-                  <ImageView fx:id="imgPrev" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgPrev" fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#imgPrevOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/Button-First-icon.png" />
                      </image>
@@ -60,7 +60,7 @@
                         </ImageView>
                      </children>
                   </StackPane>
-                  <ImageView fx:id="imgNext" fitHeight="40.0" fitWidth="40.0" layoutX="68.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgNext" fitHeight="40.0" fitWidth="40.0" layoutX="68.0" layoutY="10.0" onMouseClicked="#imgNextOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/Button-Next-icon.png" />
                      </image>
