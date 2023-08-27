@@ -11,6 +11,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.util.List;
 
 public class MainFormController {
 
@@ -54,7 +55,9 @@ public class MainFormController {
     public void imgOpenOnMouseClicked(MouseEvent mouseEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Mp3 Files","*mp3"));
-        File audioFile = fileChooser.showOpenDialog(root.getScene().getWindow());
+//        File audioFile = fileChooser.showOpenDialog(root.getScene().getWindow());
+        List<File> files = fileChooser.showOpenMultipleDialog(root.getScene().getWindow());
+        File audioFile = files.get(0);
 
         if(audioFile!=null){
             txtOpen.setText(audioFile.getAbsolutePath());
@@ -87,7 +90,9 @@ public class MainFormController {
         }
     }
 
-
-
-
+    public void imgRepeatOnMouseClicked(MouseEvent mouseEvent) {
+        if(mediaPlayer!=null){
+            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        }
+    }
 }

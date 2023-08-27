@@ -37,7 +37,7 @@
             <Slider fx:id="sldTiming" />
             <HBox alignment="CENTER" prefHeight="49.0" prefWidth="411.0" spacing="15.0">
                <children>
-                  <ImageView fx:id="imgRepeat" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgRepeat" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#imgRepeatOnMouseClicked" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/Button-Repeat-icon.png" />
                      </image></ImageView>
@@ -71,11 +71,20 @@
                      </image>
                   </ImageView>
                   <Slider fx:id="sldVolume" prefHeight="16.0" prefWidth="100.0" />
-                  <ImageView fx:id="imgVolume" fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/Sound-on-icon.png" />
-                     </image>
-                  </ImageView>
+                  <StackPane prefHeight="40.0" prefWidth="40.0">
+                     <children>
+                        <ImageView fx:id="imgMute" fitHeight="25.0" fitWidth="25.0" layoutX="98.0" layoutY="73.0" onMouseClicked="#imgMuteOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Sound-off-icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="imgVolume" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#imgVolumeOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Sound-on-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
                </children>
                <padding>
                   <Insets top="5.0" />
