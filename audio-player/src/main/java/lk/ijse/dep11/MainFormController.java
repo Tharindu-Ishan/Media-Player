@@ -54,20 +54,13 @@ public class MainFormController {
     @FXML
     private TextField txtOpen;
 
+    private int index=0;//        imgRepeat.setOnMousePressed(event -> imgRepeat.setEffect(new InnerShadow(30, Color.BLACK)
 
-    private int index=0;
     List<File> files;
     File audioFile;
     MediaPlayer mediaPlayer;
 
-
-
-
     public void initialize(){
-
-
-//        imgRepeat.setOnMousePressed(event -> imgRepeat.setEffect(new InnerShadow(30, Color.BLACK)
-
 
         ImageView [] array={imgRepeat,imgPrev,imgPlay,imgPause,imgNext,imgStop,imgVolume,imgMute,imgOpen};
         for (ImageView imageView : array) {
@@ -84,9 +77,11 @@ public class MainFormController {
             });
             imageView.setOnMouseReleased(mouseEvent -> {
                 imageView.setEffect(new InnerShadow(0, Color.BLACK));
-
             });
         }
+//        sldTiming.setOnMouseDragged(mouseEvent -> {
+//            mediaPlayer.setOnPlaying(mediaPlayer.getOnPlaying());
+//        });
 
     }
 
@@ -104,15 +99,15 @@ public class MainFormController {
         else {
             txtOpen.clear();
         }
-
     }
-
     public void imgPlayOnMouseClicked(MouseEvent mouseEvent) {
         if(mediaPlayer!=null) {
 
             mediaPlayer.play();
             imgPause.toFront();
+
             mediaPlayer.currentTimeProperty().addListener((observableValue, duration, t1) -> {
+
                 lblTime.setText(String.format("Time : %02.0f : %02.0f",duration.toMinutes(),duration.toSeconds()));
                 sldTiming.setValue(duration.toSeconds()*100/mediaPlayer.getStopTime().toSeconds());
             });
